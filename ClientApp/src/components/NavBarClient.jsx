@@ -3,7 +3,7 @@ import React from 'react'
 export function NavBarClient() {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/HomePage_Client">
         Furry Friends
       </a>
       <button
@@ -21,27 +21,27 @@ export function NavBarClient() {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/HomePage_Client">
               Home <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              View Profile
+            <a class="nav-link" href="/ViewMyProfile_Client">
+              View My Profile
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/ViewAllDogWalkers_Client">
               View All Dog Walkers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="BookAWalk_Client">
               Book a Walk
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="ViewPhotos_Client">
               View Photos
             </a>
           </li>

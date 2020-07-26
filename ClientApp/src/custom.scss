@@ -1,19 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Raleway&display=swap');
 
-h1 {
-  font-family: 'Chewy', cursive;
-  text-align: center;
-}
-
-h6 {
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
-}
-
 #header {
   padding: 0.5rem 0rem 0.5rem 0rem;
   background: #11999e;
   color: #000645;
+}
+#HomePage {
+  text-align: center;
 }
 
 #LogInElement {
@@ -27,4 +20,20 @@ h6 {
 
 #CreateAnAccountForm {
   padding-top: 1rem;
+}
+footer {
+  height: 6rem;
+  background: #11999e;
+  color: #000645;
+  margin-top: 1rem;
+}
+
+h1 {
+  font-family: 'Chewy', cursive;
+  text-align: center;
+}
+
+h6 {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
 }

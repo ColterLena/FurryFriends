@@ -1,0 +1,6 @@
+TRUNCATE TABLE "Clients";
+
+INSERT INTO "Clients" ("FullName", "Email", "Password", "HomeAddress", "DogName", "DogBreed", "AboutMe") VALUES ('Alex Baker', 'alex.baker@email.com', 'password1', '1234 Main St', 'Spot', 'Golden Retriever', 'I live in Tampa, FL.');
+INSERT INTO "Clients" ("FullName", "Email", "Password", "HomeAddress", "DogName", "DogBreed", "AboutMe") VALUES ('Michael Wilson', 'michael.wilson@email.com', 'password2', '4321 High St', 'Angela', 'Welsh Corgi', 'I live in St. Pete, FL');
+INSERT INTO "Clients" ("FullName", "Email", "Password", "HomeAddress", "DogName", "DogBreed", "AboutMe") VALUES ('Jennifer Kelly', 'jennifer.kelly@email.com', 'password3', '6785 N Bayshore Blvd', 'Cally', 'Labrador Retriever', 'I live in Largo FL.');
+INSERT INTO "Clients" ("FullName", "Email", "Password", "HomeAddress", "DogName", "DogBreed", "AboutMe") VALUES ('Ashley Keegan', 'ashley.keegan@email.com', 'password4', '4857 S Howard St', 'Sadie', 'Jack Russell Terrier', 'I live in Temple Terrace, FL.');

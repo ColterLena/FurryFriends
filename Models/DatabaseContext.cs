@@ -13,8 +13,8 @@ namespace FurryFriends.Models
         // Change this to true if you want to have logging of SQL statements in development
         private static bool LOG_SQL_STATEMENTS_IN_DEVELOPMENT = false;
 
-
-
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<DogWalker> DogWalkers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

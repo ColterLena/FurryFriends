@@ -1,10 +1,10 @@
 import React from 'react'
 
-export function ViewProfileDogWalker() {
+export function ViewMyProfile_DogWalker() {
   return (
     <>
       <div class="container" id="CreateAnAccountForm">
-        <h3>Name of Client</h3>
+        <h3>Name of Dog Walker</h3>
         <img src="http://placekitten.com/300/300" alt="An Animal" />
         <h5>About Me</h5>
         <p>
@@ -16,8 +16,17 @@ export function ViewProfileDogWalker() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <h5>Availability Calendar</h5>
-        <img src="http://placekitten.com/300/300" alt="An Animal" />
+        <p></p>
+        <h5>Work Availability Schedule</h5>
+        <ul>
+          <li>Monday: 1:00-5:00 PM</li>
+          <li>Tuesday: 1:00-5:00 PM</li>
+          <li>Wednesday: 1:00-5:00 PM</li>
+          <li>Thursday: 1:00-5:00 PM</li>
+          <li>Friday: 1:00-5:00 PM</li>
+          <li>Saturday: 1:00-5:00 PM</li>
+          <li>Sunday: 1:00-5:00 PM</li>
+        </ul>
       </div>
     </>
   )

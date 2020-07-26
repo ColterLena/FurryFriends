@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ViewProfileClient() {
+export function ViewMyProfile_Client() {
   return (
     <>
       <div class="container" id="CreateAnAccountForm">

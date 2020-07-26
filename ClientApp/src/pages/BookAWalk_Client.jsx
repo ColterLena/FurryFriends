@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function BookAWalkClient() {
+export function BookAWalk_Client() {
   return (
     <>
       <div class="container" id="CreateAnAccountForm">

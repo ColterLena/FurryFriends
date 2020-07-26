@@ -3,7 +3,7 @@ import React from 'react'
 export function NavBar() {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         Furry Friends
       </a>
       <button
@@ -26,13 +26,18 @@ export function NavBar() {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/LogIn">
               Log In
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              Create an Account
+            <a class="nav-link" href="/CreateAnAccount_Client">
+              Create a Client Account
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/CreateAnAccount_DogWalker">
+              Create a Dog Walker Account
             </a>
           </li>
         </ul>

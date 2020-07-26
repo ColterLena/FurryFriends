@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function UploadPhotosDogWalker() {
+export function UploadPhotos_DogWalker() {
   return (
     <>
       <div class="container" id="CreateAnAccountForm">
