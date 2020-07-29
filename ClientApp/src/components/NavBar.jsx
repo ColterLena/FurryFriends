@@ -2,7 +2,7 @@ import React from 'react'
 
 export function NavBar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info" id="NavBar1">
       <a class="navbar-brand" href="/">
         Furry Friends
       </a>

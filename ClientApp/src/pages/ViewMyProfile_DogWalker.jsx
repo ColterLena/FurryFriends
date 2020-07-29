@@ -29,17 +29,14 @@ export function ViewMyProfile_DogWalker() {
 
   return (
     <>
-      <div class="container" id="CreateAnAccountForm">
-        <h3>{dogWalker.fullName}</h3>
-        <img src="http://placekitten.com/300/300" alt="An Animal" />
-        <h5>Email</h5>
-        <p>{dogWalker.email}</p>
-        <h5>Fee Per Walk</h5>
-        <p>{dogWalker.feePerWalk}</p>
-        <h5>About Me</h5>
-        <p>{dogWalker.aboutMe}</p>
-        <h5></h5>
-        <h5>Work Availability Schedule</h5>
+      <div class="container" id="MyProfileDogWalker">
+        <h2>My Profile</h2>
+        <p>Name: {dogWalker.fullName}</p>
+        <p>Email: {dogWalker.email}</p>
+        <p>Home Address: {dogWalker.homeAddress}</p>
+        <p>Fee Per Walk: {dogWalker.feePerWalk}</p>
+        <p>About Me: {dogWalker.aboutMe}</p>
+        <h5>Schedule</h5>
         <ul>
           <li>Monday: {dogWalker.monday}</li>
           <li>Tuesday: {dogWalker.tuesday}</li>

@@ -7,7 +7,7 @@ export function NavBarDogWalker() {
   const viewMyProfilePath = `ViewMyProfile_DogWalker/${user.id}`
   const calendarPath = `Calendar_DogWalker/${user.id}`
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info" id="NavBar3">
       <a class="navbar-brand" href={homePath}>
         Furry Friends
       </a>
@@ -38,6 +38,11 @@ export function NavBarDogWalker() {
           <li class="nav-item">
             <a class="nav-link" href={calendarPath}>
               Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              Log Out
             </a>
           </li>
         </ul>

@@ -9,7 +9,7 @@ export function NavBarClient() {
   const bookAWalk = `BookAWalk_Client/${user.id}`
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info" id="NavBar2">
       <a class="navbar-brand" href={homePath}>
         Furry Friends
       </a>
@@ -45,6 +45,11 @@ export function NavBarClient() {
           <li class="nav-item">
             <a class="nav-link" href={bookAWalk}>
               Book a Walk
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              Log Out
             </a>
           </li>
         </ul>

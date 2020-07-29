@@ -2,11 +2,20 @@
 
 #header {
   padding: 0.5rem 0rem 0.5rem 0rem;
-  background: #11999e;
+  background: #e4f9f5;
   color: #000645;
 }
+
 #HomePage {
   text-align: center;
+  background: #40514e;
+  color: #e4f9f5;
+  font-family: 'Raleway', sans-serif;
+}
+
+#HomePage h2 {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 #LogInElement {
@@ -35,11 +44,26 @@
 #DogWalkerLogInForm {
   margin-bottom: 15rem;
 }
+
+#MyProfileDogWalker h2 {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+#MyProfileClient h2 {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+#SingleDogWalker h2 {
+  text-align: center;
+  padding-top: 1rem;
+}
 footer {
   height: 6rem;
-  background: #11999e;
+  background: #30e3ca;
   color: #000645;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 h1 {

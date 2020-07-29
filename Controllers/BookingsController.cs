@@ -156,7 +156,7 @@ namespace FurryFriends.Controllers
                 var message = new MimeMessage();
                 message.From.Add(new MailboxAddress("FurryFriends", "furryfriendsdogwalkingfl@gmail.com"));
                 message.To.Add(new MailboxAddress($"{booking.DogWalkerFullName}", $"{booking.DogWalkerEmail}"));
-                message.Subject = "You Have a New Booking";
+                message.Subject = $"You Have a New Booking with {booking.ClientFullName}";
                 message.Body = new TextPart("plain")
                 {
                     Text = $"Hi {booking.DogWalkerFullName}, you just received a request from {booking.ClientFullName} to walk their dog on {booking.DayOfBooking} at {booking.TimeOfBooking}. The pick up address is {booking.PickUpAddress}, and the pick up instructions are: {booking.PickUpInstructions}. If you have any questions or can't perform this service, please contact the client at {booking.ClientPhoneNumber} or {booking.ClientEmail}."
