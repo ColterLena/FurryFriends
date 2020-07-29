@@ -2,69 +2,23 @@
 using FurryFriends.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace FurryFriends.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20200726194656_AddClientAndDogWalkerRequiredFields")]
+    partial class AddClientAndDogWalkerRequiredFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                 .HasAnnotation("ProductVersion", "3.1.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
-
-            modelBuilder.Entity("FurryFriends.Models.Booking", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("ClientEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ClientFullName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ClientPhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("DayOfBooking")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("DogWalkerEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("DogWalkerFullName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PickUpAddress")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PickUpInstructions")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TimeOfBooking")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Bookings");
-                });
 
             modelBuilder.Entity("FurryFriends.Models.Client", b =>
                 {
@@ -90,10 +44,11 @@ namespace FurryFriends.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("HashedPassword")
+                    b.Property<string>("HomeAddress")
                         .HasColumnType("text");
 
-                    b.Property<string>("HomeAddress")
+                    b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -125,13 +80,14 @@ namespace FurryFriends.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("HashedPassword")
-                        .HasColumnType("text");
-
                     b.Property<string>("HomeAddress")
                         .HasColumnType("text");
 
                     b.Property<string>("Monday")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Saturday")

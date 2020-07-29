@@ -2,15 +2,17 @@
 using FurryFriends.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace FurryFriends.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20200728150147_MadeChangesToBookingClass")]
+    partial class MadeChangesToBookingClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,7 @@ namespace FurryFriends.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ClientFullName")
+                    b.Property<string>("ClientId")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -46,6 +48,10 @@ namespace FurryFriends.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("DogWalkerFullName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("DogWalkerId")
                         .IsRequired()
                         .HasColumnType("text");
 

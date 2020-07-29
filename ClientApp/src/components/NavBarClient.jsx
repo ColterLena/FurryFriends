@@ -1,9 +1,16 @@
 import React from 'react'
+import { getUser } from './auth'
 
 export function NavBarClient() {
+  const user = getUser()
+  const homePath = `HomePage_Client/${user.id}`
+  const viewMyProfilePath = `ViewMyProfile_Client/${user.id}`
+  const viewAllDogWalkersPath = `ViewAllDogWalkers_Client/${user.id}`
+  const bookAWalk = `BookAWalk_Client/${user.id}`
+
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/HomePage_Client">
+      <a class="navbar-brand" href={homePath}>
         Furry Friends
       </a>
       <button
@@ -21,33 +28,23 @@ export function NavBarClient() {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/HomePage_Client">
+            <a class="nav-link" href={homePath}>
               Home <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/ViewMyProfile_Client">
+            <a class="nav-link" href={viewMyProfilePath}>
               View My Profile
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/ViewAllDogWalkers_Client">
+            <a class="nav-link" href={viewAllDogWalkersPath}>
               View All Dog Walkers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="BookAWalk_Client">
+            <a class="nav-link" href={bookAWalk}>
               Book a Walk
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ViewPhotos_Client">
-              View Photos
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Log Out
             </a>
           </li>
         </ul>

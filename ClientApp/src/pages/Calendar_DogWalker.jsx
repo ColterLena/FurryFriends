@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { authHeader } from './auth'
+import { getUser, authHeader } from './auth'
 
 export function Calendar_DogWalker() {
   const [errorMessage, setErrorMessage] = useState()

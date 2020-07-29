@@ -12,7 +12,7 @@ function SingleDogWalkerFromList(props) {
       <div className="d-flex w-100 justify-content-between">
         <h5 className="mb-1">{dogWalker.fullName}</h5>
       </div>
-      <p className="mb-1">{dogWalker.homeAddress}</p>
+      <p className="mb-1">Fee Per Walk: {dogWalker.feePerWalk}</p>
     </Link>
   )
 }

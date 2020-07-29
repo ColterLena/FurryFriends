@@ -31,13 +31,17 @@ namespace FurryFriends.Controllers
         // Returns a list of all your Clients
         //
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Client>>> GetClients()
+        public async Task<ActionResult<IEnumerable<Client>>> GetClients(string filter)
         {
-            // Uses the database context in `_context` to request all of the Clients and
-            // return them as a JSON array.
-            return await _context.Clients.ToListAsync();
+            if (filter == null)
+            {
+                return await _context.Clients.ToListAsync();
+            }
+            else
+            {
+                return await _context.Clients.Where(singleClient => singleClient.Email.Contains(filter)).ToListAsync();
+            }
         }
-
         // GET: api/Clients/5
         //
         // Fetches and returns a specific client by finding it by id. The id is specified in the
@@ -128,13 +132,27 @@ namespace FurryFriends.Controllers
         [HttpPost]
         public async Task<ActionResult<Client>> PostClient(Client client)
         {
+            var alreadyHaveUserWithTheEmail = _context.Clients.Any(existingClient => existingClient.Email.ToLower() == client.Email.ToLower());
+            if (alreadyHaveUserWithTheEmail)
+            {
+                // Make a custom error response
+                var response = new
+                {
+                    status = 400,
+                    errors = new List<string>() { "This account already exists!" }
+                };
+
+                // Return our error with the custom response
+                return BadRequest(response);
+            }
+
             // Indicate to the database context we want to add this new record
             _context.Clients.Add(client);
             await _context.SaveChangesAsync();
 
             // Return a response that indicates the object was created (status code `201`) and some additional
             // headers with details of the newly created object.
-            return CreatedAtAction("GetClient", new { id = client.Id }, client);
+            return CreatedAtAction("GetUser", new { id = client.Id }, client);
         }
 
         // DELETE: api/Clients/5

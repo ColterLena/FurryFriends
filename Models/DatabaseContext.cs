@@ -15,6 +15,7 @@ namespace FurryFriends.Models
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<DogWalker> DogWalkers { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import { authHeader } from './auth'
+import { authHeader, recordAuthentication, getUser } from './auth'
 
 export function CreateAnAccount_DogWalker() {
   const history = useHistory()
@@ -49,6 +49,8 @@ export function CreateAnAccount_DogWalker() {
     if (apiResponse.errors) {
       setErrorMessage(Object.values(apiResponse.errors).join(' '))
     } else {
+      recordAuthentication(apiResponse)
+      const user = getUser()
       history.push('/')
     }
   }

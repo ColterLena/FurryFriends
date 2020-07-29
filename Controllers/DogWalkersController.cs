@@ -31,11 +31,18 @@ namespace FurryFriends.Controllers
         // Returns a list of all your DogWalkers
         //
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DogWalker>>> GetDogWalkers()
+        public async Task<ActionResult<IEnumerable<DogWalker>>> GetDogWalkers(string filter)
         {
             // Uses the database context in `_context` to request all of the DogWalkers and
             // return them as a JSON array.
-            return await _context.DogWalkers.ToListAsync();
+            if (filter == null)
+            {
+                return await _context.DogWalkers.ToListAsync();
+            }
+            else
+            {
+                return await _context.DogWalkers.Where(dogWalker => dogWalker.Email.Contains(filter)).ToListAsync();
+            }
         }
 
         // GET: api/DogWalkers/5
@@ -128,13 +135,27 @@ namespace FurryFriends.Controllers
         [HttpPost]
         public async Task<ActionResult<DogWalker>> PostDogWalker(DogWalker dogWalker)
         {
+            var alreadyHaveUserWithTheEmail = _context.DogWalkers.Any(existingDogWalker => existingDogWalker.Email.ToLower() == dogWalker.Email.ToLower());
+            if (alreadyHaveUserWithTheEmail)
+            {
+                // Make a custom error response
+                var response = new
+                {
+                    status = 400,
+                    errors = new List<string>() { "This account already exists!" }
+                };
+
+                // Return our error with the custom response
+                return BadRequest(response);
+            }
+
             // Indicate to the database context we want to add this new record
             _context.DogWalkers.Add(dogWalker);
             await _context.SaveChangesAsync();
 
             // Return a response that indicates the object was created (status code `201`) and some additional
             // headers with details of the newly created object.
-            return CreatedAtAction("GetDogWalker", new { id = dogWalker.Id }, dogWalker);
+            return CreatedAtAction("GetUser", new { id = dogWalker.Id }, dogWalker);
         }
 
         // DELETE: api/DogWalkers/5

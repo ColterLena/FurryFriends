@@ -26,8 +26,13 @@ export function NavBar() {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/LogIn">
-              Log In
+            <a class="nav-link" href="/ClientLogIn">
+              Client Log In
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/DogWalkerLogIn">
+              Dog Walker Log In
             </a>
           </li>
           <li class="nav-item">

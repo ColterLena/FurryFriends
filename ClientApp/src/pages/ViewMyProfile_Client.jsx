@@ -1,25 +1,41 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { getUser } from './auth'
 
 export function ViewMyProfile_Client() {
+  const [client, setClient] = useState({
+    fullName: '',
+    email: '',
+    homeAddress: '',
+    dogName: '',
+    dogBreed: '',
+    aboutMe: '',
+  })
+
+  const user = getUser()
+
+  useEffect(() => {
+    fetch(`/api/Clients/${user.id}`)
+      .then(response => response.json())
+      .then(apiData => {
+        setClient(apiData)
+      })
+  }, [])
+
   return (
     <>
       <div class="container" id="CreateAnAccountForm">
-        <h3>Name of Client</h3>
+        <h3>{client.fullName}</h3>
         <img src="http://placekitten.com/300/300" alt="An Animal" />
+        <h5>Email</h5>
+        <p>{client.email}</p>
+        <h5>Home Address</h5>
+        <p>{client.homeAddress}</p>
         <h5>Dog's Name</h5>
-        <p>At vero eos</p>
+        <p>{client.dogName}</p>
         <h5>Dog's Breed</h5>
-        <p>accusamus et iusto</p>
+        <p>{client.dogBreed}</p>
         <h5>About Me</h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p>{client.aboutMe}</p>
       </div>
     </>
   )
