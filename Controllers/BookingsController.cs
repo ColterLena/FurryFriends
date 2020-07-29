@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using FurryFriends.Models;
 using MimeKit;
 using MailKit.Net.Smtp;
+using Microsoft.Extensions.Configuration;
 
 namespace FurryFriends.Controllers
 {
@@ -18,15 +19,32 @@ namespace FurryFriends.Controllers
     [ApiController]
     public class BookingsController : ControllerBase
     {
-        // This is the variable you use to have access to your database
         private readonly DatabaseContext _context;
+        readonly protected string universalEmail;
+
+        readonly protected string universalPassword;
 
         // Constructor that recives a reference to your database context
         // and stores it in _context for you to use in your API methods
-        public BookingsController(DatabaseContext context)
+        public BookingsController(DatabaseContext context, IConfiguration config)
         {
             _context = context;
+            universalEmail = config["universalEmail"];
+            universalPassword = config["universalPassword"];
         }
+
+        // This is the variable you use to have access to your database
+        //         
+        // public DatabaseContext(IConfiguration configuration)
+        // {
+        //  this.universalEmail = configuration["universalEmail"];
+        // }
+        //         // Constructor that recives a reference to your database context
+        //         // and stores it in _context for you to use in your API methods
+        //         public BookingsController(DatabaseContext context)
+        //         {
+        //             _context = context;
+        //         }
 
         // GET: api/Bookings
         //
@@ -150,7 +168,7 @@ namespace FurryFriends.Controllers
                     client.Connect("smtp.gmail.com", 587, false);
 
                     //SMTP server authentication if needed
-                    client.Authenticate("furryfriendsdogwalkingfl@gmail.com", "AlaskaWild123##");
+                    client.Authenticate(universalEmail, universalPassword);
 
                     client.Send(message);
 
