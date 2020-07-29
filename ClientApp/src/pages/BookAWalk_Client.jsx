@@ -97,6 +97,7 @@ export function BookAWalk_Client() {
               id="dogWalkerFullName"
               onChange={handleSelectChange}
             >
+              <option></option>
               {dogWalkers.map(dogWalker => (
                 <SingleDogWalkerFromList
                   key={dogWalker.id}
