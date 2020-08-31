@@ -11,5 +11,5 @@ FurryFriends is a fullstack web application that connects dog walkers with clien
 - JavaScript
 - React.JS
 - CSS
-- Bootsrap.CS
+- Bootsrap
 - HTML
